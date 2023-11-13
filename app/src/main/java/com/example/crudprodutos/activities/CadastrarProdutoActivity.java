@@ -30,7 +30,7 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
         this.editTextDescricao = findViewById(R.id.edit_text_cadastrar_descricao);
         this.editTextQuantidade = findViewById(R.id.edit_text_cadastrar_estoque);
 
-        Button botaoCadastrar = findViewById(R.id.cadastrar_produto_cadastrar);
+        Button botaoCadastrar = findViewById(R.id.deletar_produto_deletar);
         botaoCadastrar.setOnClickListener(v -> {
             String codigo = editTextCodigo.getText().toString().isEmpty() ? "" : editTextCodigo.getText().toString();
             String nome = editTextNome.getText().toString().isEmpty() ? "" : editTextNome.getText().toString();
@@ -47,10 +47,10 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
             this.handleCadastrar(produto);
         });
 
-        Button botaoLimpar = findViewById(R.id.cadastrar_produto_limpar);
+        Button botaoLimpar = findViewById(R.id.deletar_produto_limpar);
         botaoLimpar.setOnClickListener(v -> this.handleLimpar());
 
-        Button botaoVoltar = findViewById(R.id.cadastrar_produto_voltar);
+        Button botaoVoltar = findViewById(R.id.deletar_produto_voltar);
         botaoVoltar.setOnClickListener(v -> this.handleVoltar());
     }
 

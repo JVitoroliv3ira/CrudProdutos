@@ -28,4 +28,5 @@
     <string name="botao_cadastrar_text">Salvar</string>
     <string name="botao_limpar_text">Limpar</string>
     <string name="botao_voltar_text">Voltar</string>
+    <string name="botao_deletar_text">Deletar</string>
 </resources>
