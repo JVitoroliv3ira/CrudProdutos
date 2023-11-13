@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">CrudProdutos</string>
+    <string name="titulo_aplicativo">IMDMarket</string>
+    <string name="cadastrar_produtos_breadcrumble">/Cadastrar Produto</string>
+    <string name="login_label">Login</string>
+    <string name="login_hint">Informe o seu login</string>
+    <string name="password_label">Senha</string>
+    <string name="password_hint">Informe a sua senha</string>
+    <string name="login_button_text">Login</string>
+    <string name="alterar_senha_text">Alterar senha</string>
+    <string name="menu_pergunta">O que deseja fazer?</string>
+    <string name="botao_cadastrar_produto_text">Cadastrar produto</string>
+    <string name="botao_listar_produto_text">Listar produtos</string>
+    <string name="botao_editar_produto_text">Alterar produto</string>
+    <string name="botao_deletar_produto_text">Deletar produto</string>
+    <string name="titulo_cadastrar_produto">Cadastrar Produto</string>
+    <string name="codigo_produto_label">Código do produto</string>
+    <string name="codigo_produto_hint">Informe o código</string>
+    <string name="nome_produto_label">Nome do produto</string>
+    <string name="nome_produto_hint">Informe o nome</string>
+    <string name="descricao_produto_label">Descrição do produto</string>
+    <string name="descricao_produto_hint">Informe a descrição</string>
+    <string name="estoque_produto_label">Estoque</string>
+    <string name="estoque_produto_hint">Informe a quantidade em estoque</string>
+    <string name="botao_cadastrar_text">Salvar</string>
+    <string name="botao_limpar_text">Limpar</string>
+    <string name="botao_voltar_text">Voltar</string>
+</resources>
