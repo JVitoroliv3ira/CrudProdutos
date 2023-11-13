@@ -165,7 +165,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/deletar_produto_deletar"
+                android:id="@+id/cadastrar_produto_cadastrar"
                 android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="5dp"
@@ -174,7 +174,7 @@
                 android:textColor="@color/primary" />
 
             <Button
-                android:id="@+id/deletar_produto_limpar"
+                android:id="@+id/cadastrar_produto_limpar"
                 android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="10dp"
@@ -184,7 +184,7 @@
                 android:textColor="@color/primary" />
 
             <Button
-                android:id="@+id/deletar_produto_voltar"
+                android:id="@+id/cadastrar_produto_voltar"
                 android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="10dp"
