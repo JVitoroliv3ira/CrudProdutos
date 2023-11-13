@@ -2,6 +2,9 @@
     <string name="app_name">CrudProdutos</string>
     <string name="titulo_aplicativo">IMDMarket</string>
     <string name="cadastrar_produtos_breadcrumble">/Cadastrar Produto</string>
+    <string name="deletar_produtos_breadcrumble">/Deletar Produto</string>
+    <string name="listar_produtos_breadcrumble">/Listar Produtos</string>
+    <string name="alterar_produtos_breadcrumble">/Alterar Produto</string>
     <string name="login_label">Login</string>
     <string name="login_hint">Informe o seu login</string>
     <string name="password_label">Senha</string>
