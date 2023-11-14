@@ -10,7 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.crudprodutos.R;
 import com.example.crudprodutos.models.Produto;
+import com.example.crudprodutos.readers.ProdutoReader;
+import com.example.crudprodutos.writers.ProdutoWriter;
 
+import java.util.Map;
 import java.util.Objects;
 
 public class CadastrarProdutoActivity extends AppCompatActivity {
@@ -20,10 +23,15 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
     private EditText editTextDescricao;
     private EditText editTextQuantidade;
 
+    private ProdutoReader reader;
+    private ProdutoWriter writer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_produto);
+        this.reader = new ProdutoReader(getApplicationContext());
+        this.writer = new ProdutoWriter(getApplicationContext());
 
         this.editTextCodigo = findViewById(R.id.edit_text_cadastrar_codigo);
         this.editTextNome = findViewById(R.id.edit_text_cadastrar_nome);
@@ -56,10 +64,23 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
 
     private void handleCadastrar(Produto produto) {
         if (Boolean.TRUE.equals(produtoValido(produto))) {
+            Map<String, Produto> produtos = this.reader.lerObjetosDoArquivo();
+            if (produtos.containsKey(produto.getCodigo())) {
+                Produto produtoExistente = produtos.get(produto.getCodigo());
+                if (produtoExistente != null) {
+                    produtoExistente.setQuantidade(produtoExistente.getQuantidade() + produto.getQuantidade());
+                } else {
+                    produtos.put(produto.getCodigo(), produto);
+                }
+            } else {
+                produtos.put(produto.getCodigo(), produto);
+            }
+            this.writer.escreverEntidadesNoArquivo(produtos);
             this.finish();
             Toast.makeText(getApplicationContext(), "Produto cadastrado com sucesso.", Toast.LENGTH_SHORT).show();
         }
     }
+
 
     private void handleLimpar() {
         this.editTextCodigo.setText("");
