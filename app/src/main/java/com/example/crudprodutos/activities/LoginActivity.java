@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     private UsuarioReader reader;
     private EditText editTextLogin;
     private EditText editTextPassword;
+    private TextView textViewAlterarSenha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
         this.editTextLogin = findViewById(R.id.edit_text_login);
         this.editTextPassword = findViewById(R.id.edit_text_password);
+        this.textViewAlterarSenha = findViewById(R.id.tv_alterar_senha);
 
         Button loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(v -> {
@@ -35,6 +38,8 @@ public class LoginActivity extends AppCompatActivity {
             String password = editTextPassword.getText().toString().isEmpty() ? "" : editTextPassword.getText().toString();
             autenticar(new Usuario(login, password));
         });
+
+        this.textViewAlterarSenha.setOnClickListener(v -> irParaAlterarSenha());
     }
 
     private void autenticar(Usuario usuario) {
@@ -61,6 +66,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private void irParaMenuActivity() {
         Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
+    }
+
+    private void irParaAlterarSenha() {
+        Intent intent = new Intent(this, AlterarSenhaActivity.class);
         startActivity(intent);
     }
 }

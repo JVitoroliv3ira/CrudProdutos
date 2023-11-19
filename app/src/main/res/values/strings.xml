@@ -5,6 +5,7 @@
     <string name="deletar_produtos_breadcrumble">/Deletar Produto</string>
     <string name="listar_produtos_breadcrumble">/Listar Produtos</string>
     <string name="alterar_produtos_breadcrumble">/Alterar Produto</string>
+    <string name="alterar_senha_breadcrumble">/Alterar Senha</string>
     <string name="login_label">Login</string>
     <string name="login_hint">Informe o seu login</string>
     <string name="password_label">Senha</string>
@@ -34,4 +35,6 @@
     <string name="nome_label_card">Nome:</string>
     <string name="descricao_label_card">Descrição:</string>
     <string name="estoque_label_card">Quantidade em Estoque:</string>
+    <string name="nova_senha_label">Nova Senha</string>
+    <string name="nova_senha_hint">Informe a nova senha</string>
 </resources>
