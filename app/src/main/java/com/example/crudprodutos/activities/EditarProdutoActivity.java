@@ -48,7 +48,7 @@ public class EditarProdutoActivity extends AppCompatActivity {
             try {
                 quantidade = Integer.parseInt(editTextQuantidade.getText().toString());
             } catch (NumberFormatException e) {
-                quantidade = 0;
+                quantidade = -1;
             }
 
             Produto produto = new Produto(codigo, nome, descricao, quantidade);
