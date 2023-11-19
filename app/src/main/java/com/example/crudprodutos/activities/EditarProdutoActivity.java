@@ -12,6 +12,8 @@ import com.example.crudprodutos.models.Produto;
 import com.example.crudprodutos.readers.ProdutoReader;
 import com.example.crudprodutos.writers.ProdutoWriter;
 
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 public class EditarProdutoActivity extends AppCompatActivity {
@@ -61,31 +63,43 @@ public class EditarProdutoActivity extends AppCompatActivity {
     }
 
     private void handleEditar(Produto produto) {
-        if (!produto.getCodigo().isEmpty()) {
-            Map<String, Produto> produtos = this.reader.lerObjetosDoArquivo();
-            if (produtos.containsKey(produto.getCodigo())) {
-                Produto produtoExistente = produtos.get(produto.getCodigo());
-
-                if (produtoExistente != null) {
-                    if (!produto.getNome().isEmpty()) produtoExistente.setNome(produto.getNome());
-                    if (!produto.getDescricao().isEmpty())
-                        produtoExistente.setDescricao(produto.getDescricao());
-                    if (produto.getQuantidade() > 0)
-                        produtoExistente.setQuantidade(produto.getQuantidade());
-
-                    this.writer.escreverEntidadesNoArquivo(produtos);
-                    Toast.makeText(getApplicationContext(), "Produto editado com sucesso.", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Produto não encontrado.", Toast.LENGTH_SHORT).show();
-                }
-            } else {
-                Toast.makeText(getApplicationContext(), "Produto não encontrado.", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(getApplicationContext(), "Código do produto é obrigatório.", Toast.LENGTH_SHORT).show();
+        if (produto.getCodigo().isEmpty()) {
+            showToast("Código do produto é obrigatório.");
+            return;
         }
+
+        Map<String, Produto> produtos = lerProdutos();
+        Produto produtoExistente = produtos.get(produto.getCodigo());
+
+        if (produtoExistente == null) {
+            showToast("Produto não encontrado.");
+            return;
+        }
+
+        atualizarProduto(produto, produtoExistente);
+        salvarProdutos(produtos);
+        showToast("Produto editado com sucesso.");
         this.finish();
     }
+
+    private void atualizarProduto(Produto produtoNovo, Produto produtoExistente) {
+        if (!produtoNovo.getNome().isEmpty()) produtoExistente.setNome(produtoNovo.getNome());
+        if (!produtoNovo.getDescricao().isEmpty()) produtoExistente.setDescricao(produtoNovo.getDescricao());
+        if (produtoNovo.getQuantidade() > 0) produtoExistente.setQuantidade(produtoNovo.getQuantidade());
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    private Map<String, Produto> lerProdutos() {
+        return this.reader.lerObjetosDoArquivo();
+    }
+
+    private void salvarProdutos(Map<String, Produto> produtos) {
+        this.writer.escreverEntidadesNoArquivo(produtos);
+    }
+
 
     private void handleLimpar() {
         this.editTextCodigo.setText("");
