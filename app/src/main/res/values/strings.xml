@@ -30,4 +30,8 @@
     <string name="botao_voltar_text">Voltar</string>
     <string name="botao_deletar_text">Deletar</string>
     <string name="botao_alterar_text">Alterar</string>
+    <string name="codigo_label_card">Código:</string>
+    <string name="nome_label_card">Nome:</string>
+    <string name="descricao_label_card">Descrição:</string>
+    <string name="estoque_label_card">Quantidade em Estoque:</string>
 </resources>
