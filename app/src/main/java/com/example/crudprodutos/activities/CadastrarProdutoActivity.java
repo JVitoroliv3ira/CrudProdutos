@@ -108,7 +108,7 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
             Toast.makeText(context, "Descrição do produto está vazia ou nula.", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (Boolean.TRUE.equals(Objects.isNull(produto.getQuantidade()) || produto.getQuantidade() <= 0)) {
+        if (Boolean.TRUE.equals(Objects.isNull(produto.getQuantidade()) || produto.getQuantidade() < 0)) {
             Toast.makeText(context, "Quantidade do produto é inválida.", Toast.LENGTH_SHORT).show();
             return false;
         }

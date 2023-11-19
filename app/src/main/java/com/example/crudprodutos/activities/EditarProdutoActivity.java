@@ -85,7 +85,7 @@ public class EditarProdutoActivity extends AppCompatActivity {
     private void atualizarProduto(Produto produtoNovo, Produto produtoExistente) {
         if (!produtoNovo.getNome().isEmpty()) produtoExistente.setNome(produtoNovo.getNome());
         if (!produtoNovo.getDescricao().isEmpty()) produtoExistente.setDescricao(produtoNovo.getDescricao());
-        if (produtoNovo.getQuantidade() > 0) produtoExistente.setQuantidade(produtoNovo.getQuantidade());
+        if (produtoNovo.getQuantidade() >= 0) produtoExistente.setQuantidade(produtoNovo.getQuantidade());
     }
 
     private void showToast(String message) {
