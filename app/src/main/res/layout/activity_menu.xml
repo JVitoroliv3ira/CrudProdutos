@@ -57,7 +57,7 @@
 
             <Button
                 android:id="@+id/cadastrar_produto"
-                android:layout_width="130dp"
+                android:layout_width="134dp"
                 android:layout_height="70dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
@@ -67,7 +67,7 @@
 
             <Button
                 android:id="@+id/listar_produtos"
-                android:layout_width="130dp"
+                android:layout_width="140dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:background="@color/background_primary"
@@ -84,7 +84,7 @@
 
             <Button
                 android:id="@+id/editar_produto"
-                android:layout_width="130dp"
+                android:layout_width="140dp"
                 android:layout_height="70dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
@@ -94,7 +94,7 @@
 
             <Button
                 android:id="@+id/deletar_produto"
-                android:layout_width="130dp"
+                android:layout_width="140dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
                 android:background="@color/background_primary"
