@@ -66,12 +66,8 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
         if (Boolean.TRUE.equals(produtoValido(produto))) {
             Map<String, Produto> produtos = this.reader.lerObjetosDoArquivo();
             if (produtos.containsKey(produto.getCodigo())) {
-                Produto produtoExistente = produtos.get(produto.getCodigo());
-                if (produtoExistente != null) {
-                    produtoExistente.setQuantidade(produtoExistente.getQuantidade() + produto.getQuantidade());
-                } else {
-                    produtos.put(produto.getCodigo(), produto);
-                }
+                Toast.makeText(getApplicationContext(), "Já existe um produto cadastrado com esse código.", Toast.LENGTH_SHORT).show();
+                return;
             } else {
                 produtos.put(produto.getCodigo(), produto);
             }
